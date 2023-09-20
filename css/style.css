@@ -1,0 +1,256 @@
+/* Обнуление */
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+html,
+body {
+	height: 100%;
+	line-height: 1;
+	background: #fafafa;
+	font-size: 14px;
+	color: #252b42;
+	font-weight: 500;
+	font-family: Montserrat;
+}
+
+/*------------------------------------FONTS-------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+/* ---------------------------------------------------------------------------- */
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+/* ---------------------------------------------------------------------------- */
+._container {
+	max-width: 1046px;
+	padding: 0px 15px;
+	margin: 0px auto;
+	box-sizing: content-box;
+}
+._ibg {
+	position: relative;
+}
+._ibg img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
+
+.page{
+	flex: 1 1 auto; /* Для того чтобы меин мог расшириться на весь экран */
+}
+/* ---------------------------------------------------------------------------- */
+
+.main-block__image{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+  opacity: 0.3;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+.main-block__body {
+	position: relative;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 50;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding: 50px 0 0 0;
+}
+.tabs {
+  margin: 0 0 50px 0;
+}
+.tabs__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tabs__item {
+  flex: 0 1 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.tabs__item span{
+  position: relative;
+  z-index: 2;
+}
+
+.tabs__body {
+}
+.tabs__block {
+  position: relative;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 120%;
+  display: none;
+}
+
+.tabs__block::before{
+  content: "";
+  height: 50px;
+  width: 50%;
+  position: absolute;
+  top: -100px;
+  border-radius: 10px;
+}
+
+.tabs__block:nth-child(1):before{
+  background-color: #fff;
+  left: 0;
+}
+.tabs__block:nth-child(2):before{
+  background-color: #fff;
+  left: 50%;
+}
+.tabs__block:nth-child(3):before{
+  background-color: #fff;
+  left: 0;
+  top: -50px;
+}
+.tabs__block:nth-child(4):before{
+  background-color: #fff;
+  top: -50px;
+  left: 50%;
+}
+
+.tabs__block:target{
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------- */
+.modal{
+  visibility: hidden;
+  opacity: 0;
+  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal.open{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+  background-color: rgb(255,202,220);
+}
+
+.modal__main{
+  position: relative;
+  z-index: 100;
+  min-width: 600px;
+  min-height: 400px;
+  background: azure;
+  margin: auto;
+  color: #000;
+  border-radius: 20px;
+  padding: 30px;
+  overflow-y: auto;
+  box-shadow: 10px 7px 17px -2px rgba(46, 51, 54, 0.27);
+}
+@media (max-width: 420px){
+  .modal__main{
+    min-height: 200px;
+    min-width: 300px;
+  }
+}
+
+.modal__title{
+  padding: 30px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.buttons{
+  display: flex;
+	flex-wrap: wrap;
+	margin: -10px 0;
+}
+
+.btn{
+  font-weight: 700;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 30px;
+  display: flex;
+  min-height: 55px;
+  width: 105px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 40px;
+  line-height: 120%;
+  text-align: center;
+  margin: 10px 0;
+  
+}
+.btn:last-child{
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.button-yes{
+  color: rgb(218,0,169, 0.7);
+  border: 2px solid rgb(255,202,220);
+  cursor: pointer;
+  background-color: transparent;
+}
+.button-no{
+  color: inherit;
+  border: 2px solid rgb(238,238,238);
+}
+
+.button-yes:active{
+  transition: ease 0.5s;
+  background-color: rgb(255,202,220);
+}
+
+.button-no:active{
+  transition: ease 0.3s;
+  background-color: rgb(238,238,238);
+}
+
